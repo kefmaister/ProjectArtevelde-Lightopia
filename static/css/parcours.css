@@ -1,0 +1,167 @@
+/* 
+  Parcours
+*/
+
+.img-1 {
+  grid-area: img1;
+}
+.img-2 {
+  grid-area: img2;
+}
+.img-3 {
+  grid-area: img3;
+}
+.img-4 {
+  grid-area: img4;
+}
+.img-5 {
+  grid-area: img5;
+}
+.img-6 {
+  grid-area: img6;
+}
+.img-7 {
+  grid-area: img7;
+}
+.img-8 {
+  grid-area: img8;
+}
+.img-9 {
+  grid-area: img9;
+}
+.img-10 {
+  grid-area: img10;
+}
+.img-11 {
+  grid-area: img11;
+}
+.img-12 {
+  grid-area: img12;
+}
+.img-13 {
+  grid-area: img13;
+}
+.img-14 {
+  grid-area: img14;
+}
+.img-15 {
+  grid-area: img15;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "img1 img1 img1 img2 img2 img2"
+    "img3 img3 img3 img3 img3 img3"
+    "img4 img4 img5 img5 img6 img6"
+    "img4 img4 img7 img7 img7 img7"
+    "img8 img8 img8 img8 img8 img8"
+    "img9 img9 img9 img10 img10 img10"
+    "img11 img11 img12 img12 img13 img13"
+    "img14 img14 img14 img14 img13 img13"
+    "img15 img15 img15 img15 img15 img15";
+  gap: 1em;
+}
+.grid-container figure a {
+  display: block;
+  height: 100%;
+}
+.grid-container figure a img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 
+  mappointer
+*/
+
+#mapContainer {
+  position: relative;
+  margin: 3.75rem auto;
+}
+
+#markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  max-width: 50px;
+  max-height: 50px;
+  background-color: var(--light);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.marker:hover {
+  color: white;
+  background: hsl(149, 76%, 36%);
+  z-index: 5;
+  opacity: 1;
+}
+@keyframes zoomRing {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.marker::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  background: var(--light);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  animation: zoomRing 1.6s infinite ease;
+  transition: 0.15s ease;
+}
+
+#foto-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: min(80px, 9vw);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s ease;
+}
+#closeBtnDetail {
+  position: absolute;
+  top: 3.125rem;
+  right: 5rem;
+}
+#closeBtnDetail:hover {
+  color: var(--light);
+  cursor: pointer;
+}
+#foto-detail.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}

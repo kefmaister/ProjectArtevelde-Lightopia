@@ -1,0 +1,496 @@
+:root {
+  --main: hsl(220, 93%, 11%);
+  --light: hsl(148, 88%, 54%);
+
+  --gap: 1.25rem;
+}
+/* fonts */
+@font-face {
+  font-family: "itc-avant-garde-gothic-pro";
+  src: url(../fonts/ITC\ Avant\ Garde\ Gothic\ Std\ Bold.otf) format("otf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "itc-avant-garde-gothic-pro";
+  src: url(../fonts/ITC\ Avant\ Garde\ Gothic\ Std\ Medium.otf) format("otf");
+  font-weight: 500;
+  font-style: normal;
+}
+/* general tags */
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background-color: var(--main);
+  color: white;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+  font-weight: bold;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+hr {
+  border: none;
+  height: 2px;
+  width: 10rem;
+  background: var(--light);
+  margin: 2.5rem auto;
+}
+p {
+  margin: 0 0 1.25rem;
+}
+p:last-child {
+  margin: 0;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--light);
+}
+address {
+  font-style: normal;
+  margin-right: 7.5rem;
+}
+figure {
+  margin: 0;
+}
+/* 
+utility classes
+*/
+
+.container {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 3.75rem;
+}
+.spacer {
+  margin-top: 6.25rem;
+}
+.img-split {
+  height: 32vw;
+  background-size: cover;
+}
+.secpad {
+  padding: 9.5rem 0 11.3rem;
+}
+.gridpad {
+  padding-bottom: 11.3rem;
+}
+.cols {
+  display: flex;
+}
+
+.cols--sb {
+  justify-content: space-between;
+}
+
+.cols--aic {
+  align-items: center;
+}
+.pd--m {
+  padding: 1.25rem 0 1rem;
+}
+.general-center {
+  text-align: center;
+  font-size: 1.1rem;
+}
+.general-center h2:not(:first-child) {
+  margin-top: 5rem;
+}
+.general-left {
+  text-align: left;
+}
+.limit-600 {
+  max-width: 37.5rem;
+}
+.limit-1000 {
+  max-width: 62.5rem;
+}
+.limit-1300 {
+  max-width: 81.25rem;
+}
+.limit-800 {
+  max-width: 50rem;
+}
+.btn-regular {
+  background: var(--light);
+  color: #fff;
+  padding: 1.2rem 3rem 1.2rem;
+  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: 0.2s ease;
+  border-radius: 1.25rem;
+  margin-top: 2rem;
+  display: inline-block;
+}
+.btn-regular:hover {
+  transform: scale(1.1);
+  color: black;
+}
+.diffBg {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.secsize h1 {
+  font-size: 2rem;
+}
+section p {
+  font-size: 1.25rem;
+}
+/* 
+    header
+*/
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 3.2rem 0 0;
+
+  transition: padding 0.2s ease, transform 0.4s ease,
+    -webkit-transform 0.4s ease;
+}
+/* header logo */
+header .logo img {
+  width: 13.1rem;
+  transition: transform 0.3s ease-in-out;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+nav ul li a + .btn {
+  font-size: 0.8rem;
+}
+.btn a {
+  position: relative;
+  overflow: hidden;
+  background: #b50090;
+  background-image: linear-gradient(120deg, #b50090 0, #0f58e6 100%);
+  color: white;
+  padding: 1rem 2rem;
+  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+  font-size: 0.95em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  border-radius: 18px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+nav a {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: 0.1s ease;
+  color: #fff;
+}
+
+nav a.active:after {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--light);
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.navbg {
+  background-color: var(--main);
+  padding: 1.25rem 0 1rem;
+}
+.navigation {
+  width: 100%;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* nav ticket btn */
+.btn a > span {
+  position: relative;
+  z-index: 1;
+}
+.btn a:hover {
+  color: black;
+}
+.btn a:hover::after {
+  transform: scaleY(1);
+}
+.btn a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  background-image: linear-gradient(120deg, var(--light) 0, #0f58e6 150%);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.2s ease;
+}
+.btn-mobile {
+  display: none;
+}
+/* 
+About
+*/
+
+#bg-01 {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 45vw;
+  min-height: 15.6rem;
+  max-height: 50rem;
+  background-color: var(--main);
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  0% {
+    transform: rotate(0);
+  }
+}
+#bg-01::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 4rem;
+  width: 50%;
+  height: calc(100% - 60px);
+  background: url(../img/background-05-l.svg) no-repeat;
+  background-size: contain;
+  background-position: top left;
+  transform: rotate(0);
+  transform-origin: bottom left;
+  animation: wave 8s infinite;
+}
+#bg-01::after {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  top: 4rem;
+  width: 50%;
+  height: calc(100% - 60px);
+  background: url(../img/background-05-r.svg) no-repeat;
+  background-size: contain;
+  background-position: top right;
+  transform: rotate(0);
+  transform-origin: bottom right;
+  animation: wave 8s infinite;
+}
+/* 
+image section spotlight
+*/
+.img-split figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.img-split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+/* 
+  text-section
+*/
+.text-section {
+  background: url(../img/background-02.png) repeat-y;
+  background-size: 100%;
+}
+
+/* 
+  Gallery section
+*/
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery figure {
+  width: 20%;
+  position: relative;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery a {
+  transition: opacity 0.2s ease;
+  display: block;
+  aspect-ratio: 1/1;
+}
+.gallery a:hover {
+  opacity: 0.6;
+}
+
+/* 
+  lightbox
+*/
+
+#lightbox {
+  background-color: hsl(0, 0%, 0%, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  z-index: 5;
+}
+#lightbox.show {
+  opacity: 1;
+  visibility: visible;
+}
+.lightboxContainer {
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
+#lightboxImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+#closeBtn:hover {
+  color: var(--light);
+}
+
+/* 
+  news section
+*/
+
+form [type="email"] {
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 0.9em;
+  line-height: 160%;
+  border-radius: 0.4rem;
+}
+[type="email"] {
+  color: var(--main);
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+/* 
+  footer
+*/
+footer {
+  position: relative;
+  padding: 5rem 0 7.5rem;
+  font-size: 0.85em;
+  line-height: 160%;
+}
+
+footer div.limit-1300 {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+footer h4 {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+h4::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.1rem;
+  background: #24f182;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10rem;
+  width: 50%;
+  height: 10rem;
+  background: url(../img/background-04-l.png) no-repeat;
+  background-size: contain;
+  background-position: top left;
+}
+footer::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -10rem;
+  width: 50%;
+  height: 10rem;
+  background: url(../img/background-04-r.png) no-repeat;
+  background-size: contain;
+  background-position: top right;
+}
+
+/* 
+  socials languages and copyright
+*/
+.socials a {
+  margin-right: 1rem;
+}
+
+.copyrights {
+  font-size: smaller;
+  margin-top: 1.6rem;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+}
